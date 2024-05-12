@@ -121,7 +121,7 @@ export function Agendamento() {
                 />
             </div>
             <div className="w-full flex gap-3 flex-col items-center justify-center mt-10">
-                <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col gap-3">
+                <form onSubmit={handleSubmit(onSubmit)} className="w-10/12 sm:w-1/2 p-4 flex flex-col gap-3">
                     <input
                         type="text"
                         className="bg-slate-200 outline-none rounded-md py-2 px-6"
@@ -137,7 +137,7 @@ export function Agendamento() {
                         {...register("telefone")}
                     />
                     <select
-                        className="bg-slate-200 w-full max-w-56 outline-none rounded-md py-2 px-6"
+                        className="bg-slate-200  outline-none rounded-md py-2 px-6"
                         //name="tamanho"
                         {...register("tamanho")}
                         id="">
@@ -149,14 +149,14 @@ export function Agendamento() {
 
                     <input
                         type="date"
-                        className="bg-slate-200 w-full max-w-56 outline-none rounded-md py-2 px-6"
+                        className="bg-slate-200  outline-none rounded-md py-2 px-6"
                         placeholder="data"
                         //name="data"
                         {...register("date")}
                     />
                     <input
                         type="time"
-                        className="bg-slate-200 w-full max-w-56 outline-none rounded-md py-2 px-6"
+                        className="bg-slate-200  outline-none rounded-md py-2 px-6"
                         placeholder="horario"
                         //name="hora"
                         {...register("hora")}

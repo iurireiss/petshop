@@ -12,6 +12,8 @@ import {
 import { FiTrash } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { TbLogin2 } from 'react-icons/tb';
+import { FaEdit } from "react-icons/fa";
+import { AiOutlineBars } from "react-icons/ai";
 
 interface AgendaProps {
     id: string;
@@ -61,20 +63,20 @@ export function PainelAgendamento() {
     return (
         <div className="w-full flex flex-col p-4 items-center justify-center">
             <header className="w-11/12 flex max-w-xl mt-4 mb-5 items-center  px-1">
-                <nav className="w-full bg-slate-200 border-2 ite  border-blue-600 h-12 flex items-center justify-between rounded-md px-3">
+                <nav className="w-full bg-slate-100 border-2 ite   h-12 flex items-center justify-between rounded-md px-3">
                     <div className="flex gap-4 items-center justify-center text-lg font-medium">
-                        <Link className='hover:text-blue-700' to="/">
-                            Inicio
+                        <Link className='hover:text-white hover:bg-blue-600 rounded px-2 py-1' to="/">
+                            INICIO
                         </Link>
-                        <Link className='hover:text-blue-700' to="/painelAgenda">
-                            Agendamentos
+                        <Link className='hover:text-white hover:bg-blue-600 rounded px-2 py-1' to="/painelAgenda">
+                            AGENDAMENTOS
                         </Link>
 
 
                     </div>
-                    <button className='flex flex-row gap-2 font-semibold' >
-                        Sair
-                        <TbLogin2 size={28} color="#ca3c23" />
+                    <button className='flex group flex-row gap-2 font-semibold hover:text-white hover:bg-blue-600 rounded px-2 py-1' >
+                        SAIR
+                        <TbLogin2 className='text-red-600 group-hover:text-white'  size={28}  />
                     </button>
                 </nav>
             </header>
@@ -83,17 +85,29 @@ export function PainelAgendamento() {
             {agenda.map((Agenda) => (
                 <article
                     key={Agenda.id}
-                    className="flex text-lg  bg-blue-700 text-white items-center justify-between w-11/12 max-w-xl rounded py-4 px-4 mb-2 select-none"
+                    className="flex text-lg  bg-blue-700 text-white items-center justify-between w-11/12 max-w-[1280px] rounded py-4 px-4 mb-2 select-none"
                 >
                     <p>{Agenda.name}</p>
-                    <p>{Agenda.data}</p>
-                    <p>{Agenda.hora}</p>
-                    <div>
+                    <p className='invisible sm:visible'> {Agenda.data}</p>
+                    <p className='invisible sm:visible'>{Agenda.hora}</p>
+                    <div className='flex items-center justify-center gap-2'>
                         <button
-                            className="border border-dashed hover:bg-blue-300 p-1 rounded "
+                            className="border border-dashed hover:bg-red-500 p-1 rounded "
 
                         >
                             <FiTrash size={18} color="#FFF" />
+                        </button>
+                        <button
+                            className="border border-dashed hover:bg-blue-500 p-1 rounded "
+
+                        >
+                            <FaEdit size={18} color="#FFF"/>
+                        </button>
+                        <button
+                            className="border border-dashed hover:bg-green-500 p-1 rounded "
+
+                        >
+                            <AiOutlineBars size={18} color="#FFF"/>
                         </button>
                     </div>
                 </article>

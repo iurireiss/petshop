@@ -5,7 +5,7 @@ export function Header() {
     <div className="w-full px-4 flex flex-col items-center bg-slate-100 ">
       <header className="w-full shadow-sm m-4 gap-10 mt-4 rounded-lg max-w-[1280px] flex p-4 items-center justify-between bg-white h-20">
 
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-start">
           <a href="/">
             <p className="font-bold text-3xl text-blue-600 ">PETSHOP</p>
           </a>
